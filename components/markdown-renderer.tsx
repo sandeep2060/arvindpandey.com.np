@@ -84,13 +84,15 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
 				)
 			}
 
+			const prismTheme = vscDarkPlus as unknown as Record<string, React.CSSProperties>
+
 			return match ? (
 				<div className="relative my-6">
 					<div className="absolute top-0 right-0 px-3 py-1 text-xs bg-primary text-primary-foreground rounded-bl rounded-tr">
 						{match[1]}
 					</div>
 					<SyntaxHighlighter
-						style={vscDarkPlus as Record<string, React.CSSProperties>}
+						style={prismTheme}
 						language={match[1]}
 						PreTag="div"
 						className="mt-0! mb-0! rounded-lg"
